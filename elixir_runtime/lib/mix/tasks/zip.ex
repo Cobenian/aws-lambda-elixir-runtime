@@ -8,6 +8,9 @@ defmodule Mix.Tasks.Zip do
   def run(_) do
     path = release_path(app_name())
 
+    System.cmd("sh", ["-c", "chmod 644 $(find #{path} -type f)"])
+    System.cmd("sh", ["-c", "chmod 755 $(find #{path} -type d)"])
+
     File.chmod!(Path.join([path, "bin", app_name()]), 0o755)
     File.chmod!(Path.join([path, "bin", app_name() <> ".bat"]), 0o755)
 
