@@ -42,7 +42,7 @@ defmodule Mix.Tasks.Bootstrap do
 
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$BASE/lib/#{@runtime_libs}
 
-    $EXE foreground
+    $EXE daemon
     """
   end
 end
