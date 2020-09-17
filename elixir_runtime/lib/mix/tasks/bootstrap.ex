@@ -21,7 +21,7 @@ defmodule Mix.Tasks.Bootstrap do
     path = "_build/#{Mix.env()}/rel/#{name}/bootstrap"
 
     Mix.Generator.create_file(path, bootstrap(name))
-    File.chmod!(path, 0o777)
+    File.chmod!(path, 0o755)
   end
 
   # The bootstrap script contents
