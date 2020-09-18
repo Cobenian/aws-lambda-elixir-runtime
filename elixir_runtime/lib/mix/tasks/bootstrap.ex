@@ -42,6 +42,9 @@ defmodule Mix.Tasks.Bootstrap do
 
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$BASE/lib/#{@runtime_libs}
 
+    echo "going to try to run $EXE"
+    echo "/var/task/boostrap permissions: $(ls -la /var/task/bootstrap)"
+    echo "and now we start"
     $EXE start
     """
   end
